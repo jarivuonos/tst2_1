@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>FHIR App Starter Launch</title>
+  <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.min.js"></script>
+</head>
+
+<body>
+  OLEN LAUNCH.HTML...
+  <script>
+    // Epic sandbox
+    //clientId = "c18451f3-81d1-4bd2-bc6f-274519a3f25e"; // standalone patient launch
+    //clientId = "0e15d705-6049-449d-95db-05418946fe19"; // standalone provider launch
+
+    //Apotti App Orchard
+    clientId = "813e058d-4934-4498-b412-46c8504772da"; //Apotti_test_patient_user
+    //clientId = "17c6b143-039e-4570-b176-a841a5e7cabe"; //Apotti_test_provider_facing
+
+    //Logica sandbox Copy of My App - TOIMII
+    //clientId = "2612e02f-6254-4301-ac20-d10710ee901f";
+    // clientId = "acea0fa6-df5d-4913-ab3c-8b77a54d0a76";
+    state = "jarivuonos";
+
+    scope =
+      "patient/MedicationRequest.read launch/patient patient/Patient.read online_access openid profile offline_access patient/Observation.read launch fhirUser";
+    //"patient/MedicationRequest.read patient/Patient.read online_access openid profile offline_access patient/Observation.read launch fhirUser";
+
+    //redirectUri = "https://c4ukw.csb.app/";
+    redirectUri = "https://jpvreact3.web.app/index.html";
+    //redirectUri = "http://localhost:3000/index.html/";
+
+    FHIR.oauth2.authorize({
+      clientId: clientId,
+      scope: scope,
+      redirectUri: redirectUri
+    });
+  </script>
+</body>
+
+</html>
