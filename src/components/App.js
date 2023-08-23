@@ -20,7 +20,7 @@ function App() {
   const [medicationRequest, setMedicationRequest] = useState();
   const [observation, setObservation] = useState();
   const myJson = patient;
-  const myJsonMR = medicationRequest;
+  //const myJsonMR = medicationRequest;
   const myJsonObservation = observation;
 
   useEffect(() => {
